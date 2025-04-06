@@ -48,7 +48,7 @@ ALGO_CONFIG = {
 # ====================== 主程序 ======================
 def main():
     # 数据准备
-    input_file = r"C:\Users\YZY\Desktop\毕业论文\A-n32-k5.vrp"
+    input_file = 
     data = parse_cvrp_file(input_file)
     data = compute_distance_matrix(data)
     
