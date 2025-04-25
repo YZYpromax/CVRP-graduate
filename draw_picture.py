@@ -16,17 +16,20 @@ def plot_routes(data, individual, total_distance):
 
     # 解码路线
     routes = []
+    loads= []
     current_route = []
     current_load = 0
     for customer in individual:
         demand = demands[customer]
         if current_load + demand > capacity:
             routes.append(current_route)
+            loads.append(current_load)
             current_route = [customer]
             current_load = demand
         else:
             current_route.append(customer)
             current_load += demand
+            
     if current_route:
         routes.append(current_route)
     route_strings = []  # 存储路线字符串
@@ -40,6 +43,8 @@ def plot_routes(data, individual, total_distance):
         route_strings.append(f"Vehicle {i+1}: {route_str}")
     for rs in route_strings:
            print(rs)   
+    for lid in loads:
+           print(lid)
         
         
         
